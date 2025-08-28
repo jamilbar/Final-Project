@@ -67,6 +67,7 @@ def train_clip_on_sbert(texts, epochs=10, lr=1e-5, batch_size=16, save_path="cli
     """
     dataset = PlotDataset(texts)
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Combine both the text encoder and linear projection layer into training
     optimizer = optim.AdamW(list(clip_text_encoder.parameters()) + list(projection_layer.parameters()), lr=lr)
@@ -148,4 +149,5 @@ if __name__ == '__main__':
     texts = data['text'].tolist()
     # Train the CLIP model on SBERT embeddings
     trained_model = train_clip_on_sbert(texts, epochs=15, lr=1e-5, batch_size=16, save_path="clip-finetuned-sbert")
+
 
