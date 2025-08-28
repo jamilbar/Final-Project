@@ -6,7 +6,7 @@
 
 The project consists of two main scripts:
 
-1. **`fine tuned model.py`**  
+1. **`fine_tuned_model.py`**  
    - Loads and preprocesses the dataset (`IMBD DATASET.csv`).  
    - Uses **SBERT (all-MiniLM-L6-v2)** to generate semantic embeddings of plots.  
    - Fine-tunes the **CLIP text encoder** so that its embeddings align with SBERT’s space.  
@@ -38,7 +38,7 @@ pip install -r requirements
 Run the training script to align CLIP embeddings with SBERT space and to produce a folder clip-finetuned-sbert containing the fine-tuned model and tokenizer:
 
 ```bash
-python "fine tuned model.py"
+python "fine_tuned_model.py"
 
 ```
 2.Evaluate The models:
