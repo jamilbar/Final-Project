@@ -20,7 +20,23 @@ The project consists of two main scripts:
      - Fine-tuned CLIP Text Encoder   
      - Pre-trained CLIP Text Encoder  
    - Embeds the plots, retrieves the top-5 most similar items, and evaluates results using **BERTScore (Precision, Recall, F1)**.  
-   - Prints average performance metrics for easy comparison.  
+   - Prints average performance metrics for easy comparison.
+## Dataset Files
+
+- **IMBD DATASET.csv**  
+  Contains the raw dataset of video game information collected from IMDB.  
+  Main columns:  
+  - `name` → title of the video game  
+  - `plot` → short text description of the game’s plot
+  - Geners
+  - (other columns like `url`, `year`, `certificate`, `rating`, `votes` are dropped during preprocessing)  
+  This file is used both for **training** (fine-tuning CLIP with SBERT embeddings) and **evaluation**.
+
+- **ground truth.csv**  
+  Contains a subset of games with their reference matches.  
+  It is used in **evaluation** to compare the retrieved plots against human-curated ground truth.  
+  Each entry includes a `name` and its `plot`. The related titles are mapped in the `ground_truth` dictionary inside `main.py`.
+
 
 This structure separates **training** (fine-tuning CLIP) and **evaluation** (comparing models).
 
