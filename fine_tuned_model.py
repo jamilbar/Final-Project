@@ -80,7 +80,7 @@ def train_clip_on_sbert(texts, epochs=10, lr=1e-5, batch_size=16, save_path="cli
         for batch_texts, batch_targets in tqdm(dataloader, desc=f"Training Epoch"):
             # Tokenize input
             inputs = tokenizer(batch_texts, padding=True, truncation=True, return_tensors="pt")
-            inputs = {k: v.to(device) for k, v in inputs.items()}
+            inputs.to(device)
 
             # Forward pass through CLIP text encoder
             outputs = clip_text_encoder(**inputs).last_hidden_state[:, 0, :]  # CLS token
@@ -148,3 +148,4 @@ if __name__ == '__main__':
     texts = data['text'].tolist()
     # Train the CLIP model on SBERT embeddings
     trained_model = train_clip_on_sbert(texts, epochs=15, lr=1e-5, batch_size=16, save_path="clip-finetuned-sbert")
+
