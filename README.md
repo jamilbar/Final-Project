@@ -34,7 +34,7 @@ The project consists of two main scripts:
 
 - **ground truth.csv**  
   Contains a subset of games (20 video game).  
-  It is used in **evaluation** to compare the retrieved plots against human-curated ground truth (We created the ground truth).  
+  It is used in **evaluation** to compare the retrieved plots against human-curated ground truth (We maually labeld the ground truth).  
   Each entry includes a `name` and its `plot` and a text column. The related titles are mapped in the `ground_truth` dictionary inside `main.py`.
 
 
