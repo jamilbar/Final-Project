@@ -33,7 +33,7 @@ The project consists of two main scripts:
   This file is used both for **training** (fine-tuning CLIP with SBERT embeddings) and **evaluation**.
 
 - **ground truth.csv**  
-  Contains a subset of games with their reference matches.  
+  Contains a subset of games (20 video game).  
   It is used in **evaluation** to compare the retrieved plots against human-curated ground truth (We created the ground truth).  
   Each entry includes a `name` and its `plot` and a text column. The related titles are mapped in the `ground_truth` dictionary inside `main.py`.
 
