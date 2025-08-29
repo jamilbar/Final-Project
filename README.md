@@ -20,7 +20,7 @@ The project consists of two main scripts:
      - Fine-tuned CLIP Text Encoder   
      - Pre-trained CLIP Text Encoder  
    - Embeds the plots, retrieves the top-5 most similar items, and evaluates results using **BERTScore (Precision, Recall, F1)**.  
-   - Prints average performance metrics for easy comparison.
+   - Prints average performance metrics.
 ## Dataset Files
 
 - **IMBD DATASET.csv**  
