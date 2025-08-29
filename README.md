@@ -26,8 +26,8 @@ The project consists of two main scripts:
 - **IMBD DATASET.csv**  
   Contains the raw dataset of video game information collected from IMDB.  
   Main columns:  
-  - `name` → title of the video game  
-  - `plot` → short text description of the game’s plot
+  - `name`: title of the video game  
+  - `plot`: short text description of the game’s plot
   - Geners
   - (other columns like `url`, `year`, `certificate`, `rating`, `votes` are dropped during preprocessing)  
   This file is used both for **training** (fine-tuning CLIP with SBERT embeddings) and **evaluation**.
